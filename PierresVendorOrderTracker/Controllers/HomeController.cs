@@ -19,5 +19,11 @@ namespace PierresVendorOrderTracker.Controllers
       return View();
     }
 
+    [Route("/orders")]
+    public ActionResult Create(string description)
+    {
+      Order myOrder = new Order(description);
+      return View("Index", myOrder);
+    }
   }
 }
