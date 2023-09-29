@@ -26,5 +26,12 @@ namespace PierresVendorOrderTracker.Controllers
       Order myOrder = new Order(description);
       return RedirectToAction("Index");
     }
+
+    [HttpPost("/orders/delete")]
+    public ActionResult DeleteAll()
+    {
+      Order.ClearAll();
+      return View();
+    }
   }
 }
