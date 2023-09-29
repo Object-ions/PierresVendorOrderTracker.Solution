@@ -6,24 +6,24 @@ namespace PierresVendorOrderTracker.Controllers
   public class HomeController : Controller
   {
 
-    [Route("/")]
+    [HttpGet("/")]
     public ActionResult Index()
     {
-      Order starterOrder = new Order("Add first order to the list");
-      return View(starterOrder);
+      List<Order> allOrders = Order.GetAll();
+      return View(allOrders);
     }
 
-    [Route("/orders/new")]
-    public ActionResult New()
+    [HttpGet("/orders/new")]
+    public ActionResult CreateForm()
     {
       return View();
     }
 
-    [Route("/orders")]
+    [HttpPost("/orders")]
     public ActionResult Create(string description)
     {
       Order myOrder = new Order(description);
-      return View("Index", myOrder);
+      return RedirectToAction("Index");
     }
   }
 }
