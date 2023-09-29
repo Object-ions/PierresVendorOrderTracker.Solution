@@ -9,8 +9,14 @@ namespace PierresVendorOrderTracker.Controllers
     [Route("/")]
     public ActionResult Index()
     {
-      Order starterOrder = new Order("Add first order to To Do List");
+      Order starterOrder = new Order("Add first order to the list");
       return View(starterOrder);
+    }
+
+    [Route("/orders/new")]
+    public ActionResult New()
+    {
+      return View();
     }
 
   }
