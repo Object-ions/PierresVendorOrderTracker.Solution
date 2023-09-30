@@ -18,5 +18,19 @@ namespace PierresVendorOrderTracker.Tests
             // Assert
             Assert.AreEqual(typeof(Order), newOrder.GetType());
         }
+
+        [TestMethod]
+        public void GetDescription_ReturnsDescription_String()
+        {
+        //Arrange
+        string description = "Bagette";
+
+        //Act
+        Order newOrder = new Order(description);
+        string result = newOrder.Description;
+
+        //Assert
+        Assert.AreEqual(description, result);
+        }
     }
 }
