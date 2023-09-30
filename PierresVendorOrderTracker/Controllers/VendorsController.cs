@@ -19,6 +19,7 @@ namespace PierresVendorOrderTracker.Controllers
     {
       return View();
     }
+
     [HttpPost("/vendors")]
     public ActionResult Create(string vendorName)
     {
@@ -35,6 +36,19 @@ namespace PierresVendorOrderTracker.Controllers
       model.Add("vendor", selectedVendor);
       model.Add("orders", vendorOrders);
       return View(model);
+    }
+
+    [HttpPost("/vendors/{vendorId}/orders")]
+    public ActionResult Create(int vendorId, string itemDescription)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.Find(vendorId);
+      Order newOrder = new Order(itemDescription);
+      foundVendor.AddOrder(newOrder);
+      List<Order> vendorOrders = foundVendor.Orders;
+      model.Add("orders", vendorOrders);
+      model.Add("vendor", foundVendor);
+      return View("Show", model);
     }
   }
 }
