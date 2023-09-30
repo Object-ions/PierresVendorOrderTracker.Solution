@@ -6,8 +6,13 @@ using System;
 namespace PierresVendorOrderTracker.Tests
 {
     [TestClass]
-    public class OrderTests
+    public class OrderTests : IDisposable
     {
+        public void Dispose()
+        {
+            Order.ClearAll();
+        }
+
         [TestMethod]
         public void OrderConstructor_CreatesInstanceOfOrder_Order()
         {
@@ -22,31 +27,44 @@ namespace PierresVendorOrderTracker.Tests
         [TestMethod]
         public void GetDescription_ReturnsDescription_String()
         {
-        //Arrange
-        string description = "Bagette";
+            //Arrange
+            string description = "Bagette";
 
-        //Act
-        Order newOrder = new Order(description);
-        string result = newOrder.Description;
+            //Act
+            Order newOrder = new Order(description);
+            string result = newOrder.Description;
 
-        //Assert
-        Assert.AreEqual(description, result);
+            //Assert
+            Assert.AreEqual(description, result);
         }
 
         [TestMethod]
         public void SetDescription_SetDescription_String()
         {
-        //Arrange
-        string description = "Bagette";
-        Order newOrder = new Order(description);
+            //Arrange
+            string description = "Bagette";
+            Order newOrder = new Order(description);
 
-        //Act
-        string updatedDescription = "Challa";
-        newOrder.Description = updatedDescription;
-        string result = newOrder.Description;
+            //Act
+            string updatedDescription = "Challa";
+            newOrder.Description = updatedDescription;
+            string result = newOrder.Description;
 
-        //Assert
-        Assert.AreEqual(updatedDescription, result);
+            //Assert
+            Assert.AreEqual(updatedDescription, result);
+        }
+
+        [TestMethod]
+        public void GetAll_ReturnsEmptyList_ItemList()
+        {
+            // Arrange
+            List<Order> newList = new List<Order> { };
+
+            // Act
+            List<Order> result = Order.GetAll();
+
+            // Assert
+            CollectionAssert.AreEqual(newList, result);
         }
     }
 }
