@@ -46,7 +46,7 @@ namespace PierresVendorOrderTracker.Tests
             Order newOrder = new Order(description);
 
             //Act
-            string updatedDescription = "Challa";
+            string updatedDescription = "Challah";
             newOrder.Description = updatedDescription;
             string result = newOrder.Description;
 
@@ -64,6 +64,23 @@ namespace PierresVendorOrderTracker.Tests
             List<Order> result = Order.GetAll();
 
             // Assert
+            CollectionAssert.AreEqual(newList, result);
+        }
+
+        [TestMethod]
+        public void GetAll_returnsOrdersList_OrderList()
+        {
+            //Arrange
+            string descriptionA = "Bagette";
+            string descriptionB = "Challah";
+            Order newOrderA = new Order(descriptionA);
+            Order newOrderB = new Order(descriptionB);
+            List<Order> newList = new List<Order> { newOrderA, newOrderB };
+
+            //Act
+            List<Order> result = Order.GetAll();
+
+            //Assert
             CollectionAssert.AreEqual(newList, result);
         }
     }
