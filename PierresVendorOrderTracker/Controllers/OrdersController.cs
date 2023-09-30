@@ -6,14 +6,6 @@ namespace PierresVendorOrderTracker.Controllers
 {
   public class OrdersController : Controller
   {
-
-    [HttpGet("/orders")]
-    public ActionResult Index()
-    {
-      List<Order> allOrders = Order.GetAll();
-      return View(allOrders);
-    }
-
     [HttpGet("/orders/new")]
     public ActionResult New()
     {
@@ -25,13 +17,6 @@ namespace PierresVendorOrderTracker.Controllers
     {
       Order myOrder = new Order(description);
       return RedirectToAction("Index");
-    }
-
-    [HttpPost("/orders/delete")]
-    public ActionResult DeleteAll()
-    {
-      Order.ClearAll();
-      return View();
     }
 
     [HttpGet("/orders/{id}")]
