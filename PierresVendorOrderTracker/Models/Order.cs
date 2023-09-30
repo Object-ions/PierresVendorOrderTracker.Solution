@@ -4,13 +4,13 @@ namespace PierresVendorOrderTracker.Models
 {
   public class Order
   {
-    public string Description { get; set; }
+    public string Number { get; set; }
     public int Id { get; }
     private static List<Order> _instances = new List<Order> { };
 
-    public Order(string description)
+    public Order(string number)
     {
-      Description = description;
+      Number = number;
       _instances.Add(this);
       Id = _instances.Count;
     }
