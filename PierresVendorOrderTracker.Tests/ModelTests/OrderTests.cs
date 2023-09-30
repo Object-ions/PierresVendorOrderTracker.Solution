@@ -83,5 +83,19 @@ namespace PierresVendorOrderTracker.Tests
             //Assert
             CollectionAssert.AreEqual(newList, result);
         }
+
+        [TestMethod]
+        public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
+        {
+            //Arrange
+            string description = "Bagette";
+            Order newOrder = new Order(description);
+
+            //Act
+            int result = newOrder.Id;
+
+            //Assert
+            Assert.AreEqual(1, result);
+        }
     }
 }
