@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using PierresVendorOrderTracker.Models;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 
 namespace PierresVendorOrderTracker.Controllers
 {
@@ -32,6 +32,13 @@ namespace PierresVendorOrderTracker.Controllers
     {
       Order.ClearAll();
       return View();
+    }
+
+    [HttpGet("/orders/{id}")]
+    public ActionResult Show(int id)
+    {
+      Order foundOrder = Order.Find(id);
+      return View(foundOrder);
     }
   }
 }
