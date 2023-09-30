@@ -18,7 +18,6 @@ namespace PierresVendorOrderTracker.Tests
         {
             // Arrange
             Order newOrder = new Order("test");
-            // Act
 
             // Assert
             Assert.AreEqual(typeof(Order), newOrder.GetType());
@@ -27,30 +26,30 @@ namespace PierresVendorOrderTracker.Tests
         [TestMethod]
         public void GetDescription_ReturnsDescription_String()
         {
-            //Arrange
+            // Arrange
             string description = "Bagette";
 
-            //Act
+            // Act
             Order newOrder = new Order(description);
             string result = newOrder.Description;
 
-            //Assert
+            // Assert
             Assert.AreEqual(description, result);
         }
 
         [TestMethod]
         public void SetDescription_SetDescription_String()
         {
-            //Arrange
+            // Arrange
             string description = "Bagette";
             Order newOrder = new Order(description);
 
-            //Act
+            // Act
             string updatedDescription = "Challah";
             newOrder.Description = updatedDescription;
             string result = newOrder.Description;
 
-            //Assert
+            // Assert
             Assert.AreEqual(updatedDescription, result);
         }
 
@@ -70,32 +69,48 @@ namespace PierresVendorOrderTracker.Tests
         [TestMethod]
         public void GetAll_returnsOrdersList_OrderList()
         {
-            //Arrange
+            // Arrange
             string descriptionA = "Bagette";
             string descriptionB = "Challah";
             Order newOrderA = new Order(descriptionA);
             Order newOrderB = new Order(descriptionB);
             List<Order> newList = new List<Order> { newOrderA, newOrderB };
 
-            //Act
+            // Act
             List<Order> result = Order.GetAll();
 
-            //Assert
+            // Assert
             CollectionAssert.AreEqual(newList, result);
         }
 
         [TestMethod]
         public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
         {
-            //Arrange
+            // Arrange
             string description = "Bagette";
             Order newOrder = new Order(description);
 
-            //Act
+            // Act
             int result = newOrder.Id;
 
-            //Assert
+            // Assert
             Assert.AreEqual(1, result);
+        }
+
+        [TestMethod]
+        public void Find_ReturnsCorrectOrderItem_OrderItem()
+        {
+            // Arrange
+            string descriptionA = "Bagette";
+            string descriptionB = "Challah";
+            Order newOrder1 = new Order(descriptionA);
+            Order newOrder2 = new Order(descriptionB);
+
+            // Act
+            Order result = Order.Find(2);
+
+            // Assert
+            Assert.AreEqual(newOrder2, result);
         }
     }
 }
