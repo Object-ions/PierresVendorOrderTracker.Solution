@@ -15,5 +15,10 @@ namespace PierresVendorOrderTracker.Models
       Id = _instances.Count;
       Orders = new List<Order> { };
     }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
   }
 }
