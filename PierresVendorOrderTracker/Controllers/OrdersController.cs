@@ -6,24 +6,11 @@ namespace PierresVendorOrderTracker.Controllers
 {
   public class OrdersController : Controller
   {
-    [HttpGet("/orders/new")]
-    public ActionResult New()
+    [HttpGet("/vendors/{vendorId}/orders/new")]
+    public ActionResult New(int vendorId)
     {
-      return View();
-    }
-
-    [HttpPost("/orders")]
-    public ActionResult Create(string description)
-    {
-      Order myOrder = new Order(description);
-      return RedirectToAction("Index");
-    }
-
-    [HttpGet("/orders/{id}")]
-    public ActionResult Show(int id)
-    {
-      Order foundOrder = Order.Find(id);
-      return View(foundOrder);
+      Vendor vendor = Vendor.Find(vendorId);
+      return View(vendor);
     }
 
     [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
@@ -35,12 +22,6 @@ namespace PierresVendorOrderTracker.Controllers
       model.Add("order", order);
       model.Add("vendor", vendor);
       return View(model);
-    }
-    [HttpGet("/vendors/{vendorId}/orders/new")]
-    public ActionResult New(int vendorId)
-    {
-      Vendor vendor = Vendor.Find(vendorId);
-      return View(vendor);
     }
   }
 }
