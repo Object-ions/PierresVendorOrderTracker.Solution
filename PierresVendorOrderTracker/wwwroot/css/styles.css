@@ -26,16 +26,28 @@ h2 {
   margin: 0 20px;
 }
 
+h3,
+h4 {
+  text-align: center;
+}
+
 button {
   margin: 0 auto;
   cursor: pointer;
-  background-color: #64b4ff;
-  border: 2px solid #64b4ff;
+  border: 1px solid #19344d;
+  background-color: #f1f8ff;
   border-radius: 4px;
-  color: #fff;
+  color: #19344d;
   font-size: 16px;
   padding: 10px;
   width: 100%;
+  margin-top: 10px;
+  margin-bottom: 35px;
+}
+
+button:hover {
+  background-color: #19344d;
+  color: #f1f8ff;
 }
 
 a {
@@ -50,11 +62,27 @@ a {
   text-decoration: none;
   display: block;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 a:hover {
   background-color: #19344d;
   color: #f1f8ff;
+}
+
+input {
+  border: 2px solid #f0f0f0;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  display: block;
+  width: 100%;
+}
+
+small {
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: uppercase;
 }
 
 .container {
@@ -67,8 +95,5 @@ a:hover {
 
 .link-card {
   text-align: center;
-  margin-top: 30px;
-  /* display: flex; */
-  /* align-items: center;
-  justify-content: center; */
+  margin-top: 35px;
 }

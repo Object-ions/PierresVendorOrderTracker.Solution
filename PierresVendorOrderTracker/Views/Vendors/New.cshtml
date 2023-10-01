@@ -8,17 +8,23 @@
 </head>
 
 <body>
-  <h1>Add a vendor</h1>
-  <p>Add a vendor here:</p>
+  <div class="container">
+    <h1>Pierre's Bakery</h1>
+    <h2>Vendors Order Tracker</h2>
 
-  <form action="/vendors" method="post">
-    <label for="vendorName">Vendor's name</label>
-    <input id="vendorName" name="vendorName" type="text">
-    <button type="submit">Add</button>
-  </form>
+    <p>Let's add a vendor.</p>
 
-  <p><a href="/">Back home</a></p>
-  <p><a href="/vendors">Back to categories.</a></p>
+    <form action="/vendors" method="post">
+      <label for="vendorName">Vendor's name:</label>
+      <input id="vendorName" name="vendorName" type="text" placeholder="ex. Suzi Cafe">
+      <button type="submit">Add vendor to the list</button>
+    </form>
+
+    <div class="link-card">
+      <a href="/vendors">Back to vendor's list</a>
+      <a href='/'>Return to <small>Main Page</small></a>
+    </div>
+  </div>
 </body>
 
 </html>
