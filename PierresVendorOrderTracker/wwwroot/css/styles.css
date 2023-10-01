@@ -7,11 +7,18 @@
 body {
   background-color: #f9fafb;
   font-family: 'Open Sans', 'sans-serif';
-  /* display: flex; */
+  display: flex;
   align-items: center;
   justify-content: center;
   min-height: 70vh;
   margin: 0 auto;
+  color: #19344d;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 20px;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -31,10 +38,37 @@ button {
   width: 100%;
 }
 
+a {
+  cursor: pointer;
+  border: 1px solid #19344d;
+  background-color: #f1f8ff;
+  border-radius: 4px;
+  color: #19344d;
+  font-size: 16px;
+  padding: 5px;
+  width: 100%;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
+}
+
+a:hover {
+  background-color: #19344d;
+  color: #f1f8ff;
+}
+
 .container {
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   width: 400px;
   padding: 30px 40px;
+}
+
+.link-card {
+  text-align: center;
+  margin-top: 30px;
+  /* display: flex; */
+  /* align-items: center;
+  justify-content: center; */
 }

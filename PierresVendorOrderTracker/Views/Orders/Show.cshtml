@@ -1,17 +1,27 @@
-@{
-  Layout = "_Layout";
-}
+<!DOCTYPE html>
+<html>
 
-<h1>Order Details for @Model["vendor"].Name</h1>
-<h2>Tracking number: @Model["order"].Number</h2>
+<head>
+  <meta charset="utf-8">
+  <title>Pierre's Bakery - Vendors Order </title>
+  <link rel="stylesheet" type="text/css" href="~/css/styles.css">
+</head>
 
-<h3>Vendor's Name: @Model["vendor"].Name</h3>
+<body>
+  <h1>Order Details for @Model["vendor"].Name</h1>
+  <h2>Tracking number: @Model["order"].Number</h2>
 
-<h3>Title: @Model["order"].Title</h3>
-<p>Description: @Model["order"].Description</p>
-<p>Price: @Model["order"].Price</p>
-<p>Date: @Model["order"].Date</p>
-<a href='/vendors/@Model["vendor"].Id'>Back to Vendor</a>
+  <h3>Vendor's Name: @Model["vendor"].Name</h3>
 
-<a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
-<a href='/vendors'>View all vendors</a>
+  <h3>Title: @Model["order"].Title</h3>
+  <p>Description: @Model["order"].Description</p>
+  <p>Price: @Model["order"].Price</p>
+  <p>Date: @Model["order"].Date</p>
+  <a href='/vendors/@Model["vendor"].Id'>Back to Vendor</a>
+
+  <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
+  <a href='/vendors'>View all vendors</a>
+
+</body>
+
+</html>

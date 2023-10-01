@@ -1,27 +1,36 @@
-@{
-  Layout = "_Layout";
-}
+<!DOCTYPE html>
+<html>
 
-@using PierresVendorOrderTracker.Models;
+<head>
+  <meta charset="utf-8">
+  <title>Pierre's Bakery - Vendors Order</title>
+  <link rel="stylesheet" type="text/css" href="~/css/styles.css">
+</head>
 
-
-@if (Model["orders"].Count == 0)
-{
-  <h3>@Model["vendor"].Name has not placed an order yet.</h3>
-  <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
-}
-else
-{
-  <h3>Here are all the orders for this vendor:</h3>
-  <ol>
-  @foreach (Order order in @Model["orders"])
-    {
-      <li>Order ID: <a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Id</a></li>
-    }
-  </ol>
-  <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
-}
+<body>
+  @using PierresVendorOrderTracker.Models;
 
 
-<p><a href='/vendors'>Return to vendor's list</a></p>
-<p><a href='/'>Return to Main Page</a></p>
+  @if (Model["orders"].Count == 0)
+  {
+    <h3>@Model["vendor"].Name has not placed an order yet.</h3>
+    <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
+  }
+  else
+  {
+    <h3>Here are all the orders for this vendor:</h3>
+    <ol>
+      @foreach (Order order in @Model["orders"])
+      {
+        <li>Order ID: <a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Id</a></li>
+      }
+    </ol>
+    <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
+  }
+
+
+  <p><a href='/vendors'>Return to vendor's list</a></p>
+  <p><a href='/'>Return to Main Page</a></p>
+</body>
+
+</html>
