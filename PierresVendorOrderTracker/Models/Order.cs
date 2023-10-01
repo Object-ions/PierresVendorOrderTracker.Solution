@@ -5,7 +5,7 @@ namespace PierresVendorOrderTracker.Models
 {
   public class Order
   {
-    public int Number { get; set; }
+    public string Number { get; set; }
     public int Id { get; }
     public string Title { get; set; }
     public string Description { get; set; }
@@ -13,7 +13,7 @@ namespace PierresVendorOrderTracker.Models
     public DateTime Date { get; set; }
     private static List<Order> _instances = new List<Order> { };
 
-    public Order(int number, string title, string description, decimal price)
+    public Order(string number, string title, string description, decimal price)
     {
       Number = number;
       Title = title;
