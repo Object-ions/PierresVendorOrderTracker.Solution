@@ -46,6 +46,11 @@ known bugs:
 
 - no known bugs
 
+## Project Structure
+![Example Image](~/img/ProjectStructure.png)
+
+
+
 ## License
 
 [MIT License](https://choosealicense.com/licenses/mit/)
