@@ -1,28 +1,17 @@
-<!DOCTYPE html>
-<html>
+@{
+  Layout = "_Layout";
+}
 
-<head>
-  <meta charset="utf-8">
-  <title>Pierre's Bakery - Vendors Order </title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-</head>
+<h1>Order Details for @Model["vendor"].Name</h1>
+<h2>Tracking number: @Model["order"].Number</h2>
 
-<body>
-  <h1>Order Details for @Model["vendor"].Name</h1>
-  <h2>Tracking number: @Model["order"].Number</h2>
+<h3>Vendor's Name: @Model["vendor"].Name</h3>
 
-  <h3>Vendor's Name: @Model["vendor"].Name</h3>
+<h3>Title: @Model["order"].Title</h3>
+<p>Description: @Model["order"].Description</p>
+<p>Price: @Model["order"].Price</p>
+<p>Date: @Model["order"].Date</p>
+<a href='/vendors/@Model["vendor"].Id'>Back to Vendor</a>
 
-  <h3>Title: @Model["order"].Title</h3>
-  <p>Description: @Model["order"].Description</p>
-  <p>Price: @Model["order"].Price</p>
-  <p>Date: @Model["order"].Date</p>
-  <a href='/vendors/@Model["vendor"].Id'>Back to Vendor</a>
-
-  <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
-  <a href='/vendors'>View all vendors</a>
-
-</body>
-
-</html>
+<a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
+<a href='/vendors'>View all vendors</a>
