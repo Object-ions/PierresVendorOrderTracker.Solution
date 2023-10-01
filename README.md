@@ -47,7 +47,7 @@ known bugs:
 - no known bugs
 
 ## Project Structure
-![Example Image](~/img/ProjectStructure.png)
+![Project Structure](https://github.com/Object-ions/PierresVendorOrderTracker.Solution/blob/main/PierresVendorOrderTracker/wwwroot/img/ProjectStructure.png)
 
 
 
