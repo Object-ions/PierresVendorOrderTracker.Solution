@@ -17,7 +17,7 @@ namespace PierresVendorOrderTracker.Tests
         public void OrderConstructor_CreatesInstanceOfOrder_Order()
         {
             // Arrange
-            Order newOrder = new Order("test");
+            Order newOrder = new Order("123ABC", "test", "test", 10.99m);
 
             // Assert
             Assert.AreEqual(typeof(Order), newOrder.GetType());
@@ -27,10 +27,10 @@ namespace PierresVendorOrderTracker.Tests
         public void GetDescription_ReturnsDescription_String()
         {
             // Arrange
-            string description = "Bagette";
+            string description = "Test Description";
+            Order newOrder = new Order("123ABC", "test", description, 10.99m);
 
             // Act
-            Order newOrder = new Order(description);
             string result = newOrder.Description;
 
             // Assert
@@ -42,7 +42,7 @@ namespace PierresVendorOrderTracker.Tests
         {
             // Arrange
             string description = "Bagette";
-            Order newOrder = new Order(description);
+            Order newOrder = new Order("123ABC", "test", description, 10.99m);
 
             // Act
             string updatedDescription = "Challah";
@@ -67,14 +67,12 @@ namespace PierresVendorOrderTracker.Tests
         }
 
         [TestMethod]
-        public void GetAll_returnsOrdersList_OrderList()
+        public void GetAll_ReturnsOrdersList_OrderList()
         {
             // Arrange
-            string descriptionA = "Bagette";
-            string descriptionB = "Challah";
-            Order newOrderA = new Order(descriptionA);
-            Order newOrderB = new Order(descriptionB);
-            List<Order> newList = new List<Order> { newOrderA, newOrderB };
+            Order newOrder1 = new Order("123ABC", "Title A", "Description A", 10.99m);
+            Order newOrder2 = new Order("456DEF", "Title B", "Description B", 12.99m);
+            List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
             // Act
             List<Order> result = Order.GetAll();
@@ -87,8 +85,7 @@ namespace PierresVendorOrderTracker.Tests
         public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
         {
             // Arrange
-            string description = "Bagette";
-            Order newOrder = new Order(description);
+            Order newOrder = new Order("123ABC", "test", "test", 10.99m);
 
             // Act
             int result = newOrder.Id;
@@ -101,10 +98,8 @@ namespace PierresVendorOrderTracker.Tests
         public void Find_ReturnsCorrectOrderItem_OrderItem()
         {
             // Arrange
-            string descriptionA = "Bagette";
-            string descriptionB = "Challah";
-            Order newOrder1 = new Order(descriptionA);
-            Order newOrder2 = new Order(descriptionB);
+            Order newOrder1 = new Order("123ABC", "test", "Description A", 10.99m);
+            Order newOrder2 = new Order("456DEF", "test", "Description B", 12.99m);
 
             // Act
             Order result = Order.Find(2);

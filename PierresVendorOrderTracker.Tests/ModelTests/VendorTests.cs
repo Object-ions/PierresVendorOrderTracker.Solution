@@ -73,8 +73,11 @@ namespace PierresVendorOrderTracker.Tests
     public void AddOrder_AssociatesOrderWithVendor_OrderList()
     {
       //Arrange
-      string description = "Bagette";
-      Order newOrder = new Order(description);
+      string orderNumber = "123ABC";
+      string orderTitle = "Test Title";
+      string orderDescription = "Bagette";
+      decimal orderPrice = 10.99m;
+      Order newOrder = new Order(orderNumber, orderTitle, orderDescription, orderPrice);
       List<Order> newList = new List<Order> { newOrder };
       string name = "Suzi Cafe";
       Vendor newVendor = new Vendor(name);
