@@ -1,8 +1,19 @@
-# Pierre's Bakery -  Vendor Order Tracker
+# Pierre's Bakery - Vendor Order Tracker
 
 #### By **Moshe Atia Poston**
 
 An MVC web application built in .NET to manage and track orders from different vendors.
+
+## Live Demo
+
+You can check out the live demo on this
+[link](https://vendorordertracker.onrender.com/)
+
+Deployed on Render.com
+
+## Description
+
+The Vendor Order Management System is a specialized MVC web application developed using .NET. It is engineered to facilitate the management and tracking of orders from various vendors. This application stands out for its functionality and utility in simplifying complex vendor interactions.
 
 ## Features
 
@@ -47,9 +58,8 @@ known bugs:
 - no known bugs
 
 ## Project Structure
+
 ![Project Structure](https://github.com/Object-ions/PierresVendorOrderTracker.Solution/blob/main/PierresVendorOrderTracker/wwwroot/img/ProjectStructure.png)
-
-
 
 ## License
 
